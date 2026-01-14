@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MCNS 隐性自恋深度评估</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <section id="landing-page" class="page active">
+            <div class="landing-content">
+                <div class="logo">MCNS.PRO</div>
+                <h1 class="main-title">隐性自恋深度评估</h1>
+                <p class="subtitle">你以为的“性格”，可能只是你的“防御”</p>
+                <div class="tags-row">
+                    <span># 深度心理学</span>
+                    <span># 30道专业测试</span>
+                    <span># 全维度结果解析</span>
+                </div>
+                <button class="btn-primary" onclick="startQuiz()">开始深度探索</button>
+                <p class="footer-note">已有 12,403 人完成评估</p>
+            </div>
+        </section>
+
+        <section id="quiz-page" class="page">
+            <div class="nav-header">
+                <button id="prev-btn" class="nav-back" onclick="prevQuestion()">
+                    上一题
+                </button>
+                <div class="progress-indicator">
+                    <span id="q-current">1</span> / 30
+                </div>
+            </div>
+            
+            <div class="progress-track">
+                <div class="progress-fill" id="progress-bar"></div>
+            </div>
+
+            <div class="question-container">
+                <h2 id="question-text" class="question-title">...</h2>
+                <div class="options-list" id="options-container">
+                    </div>
+            </div>
+        </section>
+
+        <section id="result-page" class="page">
+            <div id="result-capture-area" class="result-container">
+                
+                <div class="result-header">
+                    <div class="score-badge">
+                        <span class="label">综合得分</span>
+                        <span class="value" id="final-score">0</span>
+                    </div>
+                    <h2 class="identity-title" id="result-title">加载中...</h2>
+                    <p class="identity-subtitle" id="result-subtitle">...</p>
+                </div>
+
+                <div class="spectrum-container">
+                    <div class="spectrum-bar">
+                        <div id="score-dot" class="score-dot"></div>
+                    </div>
+                    <div class="spectrum-labels">
+                        <span>纯粹 (30)</span>
+                        <span>敏感</span>
+                        <span>自恋 (150)</span>
+                    </div>
+                    <p class="spectrum-rank" id="rank-text">...</p>
+                </div>
+
+                <div class="radar-box">
+                    <canvas id="radarChart"></canvas>
+                </div>
+
+                <div class="deep-analysis">
+                    
+                    <div class="section-block">
+                        <h3 class="section-title">
+                            <span class="icon">👁️</span> 核心画像深度侧写
+                        </h3>
+                        <p class="content-text" id="desc-main">...</p>
+                    </div>
+
+                    <div class="section-block">
+                        <h3 class="section-title">
+                            <span class="icon">🎭</span> 社交面具与潜台词
+                        </h3>
+                        <p class="content-text" id="desc-social">...</p>
+                    </div>
+
+                    <div class="section-block">
+                        <h3 class="section-title">
+                            <span class="icon">⚡</span> 能量运作模式 (恋爱/职场)
+                        </h3>
+                        <p class="content-text" id="desc-mode">...</p>
+                    </div>
+
+                    <div class="section-block highlight-block">
+                        <h3 class="section-title">
+                            <span class="icon">💡</span> 进化建议
+                        </h3>
+                        <p class="content-text" id="desc-advice">...</p>
+                    </div>
+
+                    <div class="keywords-cloud" id="keywords-box"></div>
+
+                </div>
+                
+                <div class="copyright">MCNS 隐性自恋深度评估 · 专业版</div>
+            </div>
+            <div class="action-scroll-area">
+                <button class="btn-save" onclick="saveResultImage()">保存我的心理画像 (高清)</button>
+                <button class="btn-restart" onclick="restartQuiz()">重新测试</button>
+            </div>
+        </section>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
